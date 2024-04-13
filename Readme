@@ -1,0 +1,34 @@
+def fetch_text_from_pdf(pdf_link):
+ # TODO: Use your preferred method to extract text from the PDF
+ # For example, you can use libraries like PyPDF2 or PDFMiner
+ # and implement the logic to extract text here
+ pass
+
+def preprocess_text(text):
+    # Remove non-printable characters and Unicode escape sequences
+    text = text.encode('ascii', 'ignore').decode('utf-8')
+    # TODO: Add preprocess steps as per data, Convert the text to lowercase
+    text = text.lower()
+    # # Tokenize the text into individual words
+    tokens = word_tokenize(text)
+    # # Remove stopwords and punctuation from the tokens
+    stop_words = set(stopwords.words('english'))
+    punctuation = set(string.punctuation)
+    tokens = [token for token in tokens if token not in stop_words and token not in punctuation]
+    return " ".join(tokens)
+
+# Collect and preprocess data from the PDFs
+corpus = []
+# List of books on Chanakya Neeti with their PDF links
+books = [
+ {"title": "Chanakya Neeti", "pdf_link": "<URL>"},
+ {"title": "Chanakya Neeti Darpan", "pdf_link": "<URL>"},
+ # Add more books to the list
+]
+for book in books:
+ pdf_link = book["pdf_link"]
+ text = fetch_text_from_pdf(pdf_link)
+ processed_text = preprocess_text(text)
+ corpus.extend(processed_text)
+# Print the preprocessed data
+print(corpus)

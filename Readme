@@ -1,34 +1,43 @@
-def fetch_text_from_pdf(pdf_link):
- # TODO: Use your preferred method to extract text from the PDF
- # For example, you can use libraries like PyPDF2 or PDFMiner
- # and implement the logic to extract text here
- pass
+Project Name: MyTrain Chatbot
 
-def preprocess_text(text):
-    # Remove non-printable characters and Unicode escape sequences
-    text = text.encode('ascii', 'ignore').decode('utf-8')
-    # TODO: Add preprocess steps as per data, Convert the text to lowercase
-    text = text.lower()
-    # # Tokenize the text into individual words
-    tokens = word_tokenize(text)
-    # # Remove stopwords and punctuation from the tokens
-    stop_words = set(stopwords.words('english'))
-    punctuation = set(string.punctuation)
-    tokens = [token for token in tokens if token not in stop_words and token not in punctuation]
-    return " ".join(tokens)
+Problem Statement:
 
-# Collect and preprocess data from the PDFs
-corpus = []
-# List of books on Chanakya Neeti with their PDF links
-books = [
- {"title": "Chanakya Neeti", "pdf_link": "<URL>"},
- {"title": "Chanakya Neeti Darpan", "pdf_link": "<URL>"},
- # Add more books to the list
-]
-for book in books:
- pdf_link = book["pdf_link"]
- text = fetch_text_from_pdf(pdf_link)
- processed_text = preprocess_text(text)
- corpus.extend(processed_text)
-# Print the preprocessed data
-print(corpus)
+The objective of the MyTrain Chatbot project is to develop an AI-powered chatbot that facilitates users in accessing Indian train time table information. The chatbot should prompt users for input regarding the "from" and "to" locations in multiple regional languages, as well as their seat/coach preferences (Optional), through text or audio inputs. Based on this input, the chatbot should retrieve and display all available trains on that route.
+
+Project Overview:
+
+The MyTrain Chatbot project aims to create a user-friendly and efficient solution for accessing train time table information. Drawing inspiration from Disha 2.0, this chatbot leverages Different technologies to deliver accurate and relevant results to users. Collect the dataset from publicly available resources to complete this project.
+
+Project Features:
+
+Text and Voice Input: Users can interact with the chatbot through text messages or voice commands in multiple languages.
+
+Location Selection: The chatbot will guide the user to specify their origin and destination stations.
+
+Train Information Retrieval: Based on user input, the chatbot retrieves information on available trains between the specified locations. This may include details like:
+
+- Train name and number
+- Departure and arrival times
+- Travel duration
+- Seat availability (if possible)
+
+Seat/Coach Preference (Optional): Users can optionally provide their preferred seat/coach type (if available information allows).
+
+Rectification and Recommendations:
+
+Identify bugs in Disha 2.0 and rectify those in the Rail Chatbot. Additionally, recommend alternative nearby stations if direct trains are unavailable, ensuring users have access to comprehensive travel options
+
+User-Friendly Interface: The chatbot will interact with users in a natural and engaging manner, providing clear instructions and informative responses.
+
+Error Handling: The chatbot handles erroneous inputs gracefully, guiding users to correct their input or provide clarifications as needed.
+
+Project Workflow:
+
+User Interaction: Users interact with the Rail Chatbot by entering text-based queries or speaking voice commands for train time table information.
+
+Input Processing: The chatbot processes user inputs using NLP techniques to understand the user's intent and extract relevant information.
+
+Data Retrieval: The chatbot retrieves the train time table data based on the user's input parameters.
+
+Response Generation: The chatbot generates a response containing the available trains, their schedules, seat availability (optional), Nearby stations,and coach types (optional) matching the user's criteria.
+User Feedback: Users can provide feedback on the provided information, enabling continuous improvement of the chatbot's accuracy and performance
